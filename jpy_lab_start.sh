@@ -13,5 +13,5 @@ token=`cat /dev/urandom | tr -dc 'a-z0-9' | fold -w 48 | head -n 1`
 
 out_str=${app_name}:${port}/?token=${token}
 
-echo ${out_str} >> /home/nimbix/tokens.list
+echo ${out_str} >> /home/nimbix/.tokens.list
 ~                                                                                
