@@ -25,10 +25,10 @@ RUN apt-get update && apt-get install -y \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
     
-RUN pip3 install virtualenv && \
-    pip3 install jupyterhub && \
-    pip3 install --upgrade zmq && \
-    pip3 install --upgrade notebook
+##RUN pip3 install virtualenv && \
+##    pip3 install jupyterhub && \
+##    pip3 install --upgrade zmq && \
+##    pip3 install --upgrade notebook
 
 
 
