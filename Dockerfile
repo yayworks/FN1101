@@ -83,6 +83,12 @@ RUN chmod +x /usr/local/config.sh && chown nimbix.nimbix /usr/local/config.sh &&
     /usr/local/anaconda3/envs/tensorflow/bin/conda update scikit-learn && \
     /usr/local/anaconda3/envs/tensorflow/bin/conda install pytorch
     
+    /usr/local/anaconda3/envs/tensorflow/bin/pip install --upgrade pip && \
+    /usr/local/anaconda3/envs/tensorflow/bin/pip install git+git://github.com/Hvass-Labs/scikit-optimize.git@dd7433da068b5a2509ef4ea4e5195458393e6555 && \
+    
+    echo "Y" | /usr/local/anaconda3/envs/tensorflow/bin/conda install tensorflow && \
+    echo "Y" | /usr/local/anaconda3/envs/tensorflow/bin/conda install pytorch
+    
 
 RUN echo 'export PATH=/usr/local/cuda/bin:/usr/local/anaconda3/envs/tensorflow/bin:$PATH' >> /home/nimbix/.bashrc \
 &&  echo 'export PYTHONPATH=/usr/local/anaconda3/envs/tensorflow/lib/python3.6:/usr/local/anaconda3/envs/tensorflow/lib/python3.6/site-packages/:/usr/local/anaconda3/envs/tensorflow/lib/python3.6/site-packages/prettytensor-0.7.2-py3.6.egg:/usr/local/anaconda3/envs/tensorflow/lib/python3.6/site-packages/enum34-1.1.6-py3.6.egg:/usr/local/anaconda3/envs/tensorflow/lib/python3.6/site-packages/matplotlib:$PYTHONPATH' >> /home/nimbix/.bashrc \
