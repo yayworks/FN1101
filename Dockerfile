@@ -21,7 +21,7 @@ RUN apt-get update && apt-get install -y \
     apt-get install -y python3-pip && \
     apt-get install -y nodejs-legacy && \
     apt-get install -y npm && \
-    npm install -g configurable-http-proxy && \
+ ##   npm install -g configurable-http-proxy && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
     
@@ -64,24 +64,6 @@ RUN chmod +x /usr/local/config.sh && chown nimbix.nimbix /usr/local/config.sh &&
     sudo apt-get install -y gfortran && \
     sudo apt-get update && \
     sudo apt-get install -y python-qt4 && \
-
-    /usr/local/anaconda3/envs/tensorflow/bin/pip install numpy scipy && \
-    /usr/local/anaconda3/envs/tensorflow/bin/pip install scikit-learn && \
-    /usr/local/anaconda3/envs/tensorflow/bin/pip install pillow && \
-    /usr/local/anaconda3/envs/tensorflow/bin/conda install h5py && \
-    /usr/local/anaconda3/envs/tensorflow/bin/pip install keras && \
-    /usr/local/anaconda3/envs/tensorflow/bin/pip install gensim && \
-    /usr/local/anaconda3/envs/tensorflow/bin/pip install theano && \
-    /usr/local/anaconda3/envs/tensorflow/bin/pip install tensorboard && \
-    /usr/local/anaconda3/envs/tensorflow/bin/pip install bcolz && \
-    /usr/local/anaconda3/envs/tensorflow/bin/pip install opencv-python && \
-    /usr/local/anaconda3/envs/tensorflow/bin/pip install graphviz && \
-    /usr/local/anaconda3/envs/tensorflow/bin/pip install sklearn-pandas && \
-    /usr/local/anaconda3/envs/tensorflow/bin/pip install isoweek && \
-    /usr/local/anaconda3/envs/tensorflow/bin/pip install pandas_summary && \
-    /usr/local/anaconda3/envs/tensorflow/bin/pip install tqdm && \
-    /usr/local/anaconda3/envs/tensorflow/bin/conda update scikit-learn && \
-    /usr/local/anaconda3/envs/tensorflow/bin/conda install pytorch
     
     /usr/local/anaconda3/envs/tensorflow/bin/pip install --upgrade pip && \
     /usr/local/anaconda3/envs/tensorflow/bin/pip install git+git://github.com/Hvass-Labs/scikit-optimize.git@dd7433da068b5a2509ef4ea4e5195458393e6555 && \
