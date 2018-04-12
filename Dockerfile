@@ -82,11 +82,8 @@ RUN /usr/bin/wget https://s3.amazonaws.com/yb-lab-cfg/admin/yb-admin.NIMBIX.x86_
 && tar xvf yb-admin.NIMBIX.x86_64.tar -C /usr/bin \
 && sudo apt-get install -y tcl \
 && sudo apt-get install -y git \
-&& sudo apt-get install -y awscli \
-&& sudo apt-get install r-base \
-&& sudo apt-get install gdebi-core \
-&& wget https://download2.rstudio.org/rstudio-server-1.1.442-amd64.deb \
-&& sudo gdebi rstudio-server-1.1.442-amd64.deb
+&& sudo apt-get install -y awscli 
+
     
 EXPOSE 8888
     
