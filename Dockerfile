@@ -71,6 +71,15 @@ RUN chmod +x /usr/local/config.sh && chown nimbix.nimbix /usr/local/config.sh &&
     echo "Y" | /usr/local/anaconda3/envs/tensorflow/bin/conda install tensorflow && \
     echo "Y" | /usr/local/anaconda3/envs/tensorflow/bin/conda install pytorch
     
+RUN sudo apt-get install -y r-base \
+&& sudo apt-get install -y r-base-dev 
+RUN sudo apt-get install -y gdebi-core 
+RUN /usr/bin/wget https://download2.rstudio.org/rstudio-server-1.1.442-amd64.deb 
+RUN echo "y" |sudo gdebi rstudio-server-1.1.442-amd64.deb 
+RUN rm rstudio-server-1.1.442-amd64.deb 
+
+RUN echo "auth-minimum-user-id=500" >> /etc/rstudio/rserver.conf
+    
 
 RUN echo 'export PATH=/usr/local/cuda/bin:/usr/local/anaconda3/envs/tensorflow/bin:$PATH' >> /home/nimbix/.bashrc \
 &&  echo 'export PYTHONPATH=/usr/local/anaconda3/envs/tensorflow/lib/python3.6:/usr/local/anaconda3/envs/tensorflow/lib/python3.6/site-packages/:/usr/local/anaconda3/envs/tensorflow/lib/python3.6/site-packages/prettytensor-0.7.2-py3.6.egg:/usr/local/anaconda3/envs/tensorflow/lib/python3.6/site-packages/enum34-1.1.6-py3.6.egg:/usr/local/anaconda3/envs/tensorflow/lib/python3.6/site-packages/matplotlib:$PYTHONPATH' >> /home/nimbix/.bashrc \
