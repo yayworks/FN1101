@@ -92,6 +92,8 @@ RUN sudo apt-get install -y gdebi-core
 RUN /usr/bin/wget https://download2.rstudio.org/rstudio-server-1.1.442-amd64.deb 
 RUN echo "y" |sudo gdebi rstudio-server-1.1.442-amd64.deb 
 RUN rm rstudio-server-1.1.442-amd64.deb 
+
+RUN echo "auth-minimum-user-id=500" >> /etc/rstudio/rserver.conf
     
 EXPOSE 8888
 EXPOSE 8787
