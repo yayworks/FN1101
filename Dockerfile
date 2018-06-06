@@ -33,14 +33,14 @@ RUN apt-get update && apt-get install -y \
 
 
 
-ENV MPI_VERSION 2.0.1
-ADD ./install-ompi.sh /tmp/install-ompi.sh
-RUN /bin/bash -x /tmp/install-ompi.sh && \
-    rm -rf /tmp/install-ompi.sh
+##ENV MPI_VERSION 2.0.1
+##ADD ./install-ompi.sh /tmp/install-ompi.sh
+##RUN /bin/bash -x /tmp/install-ompi.sh && \
+##    rm -rf /tmp/install-ompi.sh
 
-ENV OSU_VERSION 5.3.2
-ADD ./install-osu.sh /tmp/install-osu.sh
-RUN /bin/bash -x /tmp/install-osu.sh && rm -rf /tmp/install-osu.sh
+##ENV OSU_VERSION 5.3.2
+##ADD ./install-osu.sh /tmp/install-osu.sh
+##RUN /bin/bash -x /tmp/install-osu.sh && rm -rf /tmp/install-osu.sh
 
 ADD ./yb-sw-config.NIMBIX.x8664.turbotensor.sh /tmp/yb-sw-config.NIMBIX.x8664.turbotensor.sh
 RUN /bin/bash -x /tmp/yb-sw-config.NIMBIX.x8664.turbotensor.sh 
@@ -65,8 +65,8 @@ RUN chmod +x /usr/local/config.sh && chown nimbix.nimbix /usr/local/config.sh &&
     sudo apt-get update && \
     sudo apt-get install -y python-qt4 && \
     
-    /usr/local/anaconda3/envs/tensorflow/bin/pip install --upgrade pip && \
-    /usr/local/anaconda3/envs/tensorflow/bin/pip install git+git://github.com/Hvass-Labs/scikit-optimize.git@dd7433da068b5a2509ef4ea4e5195458393e6555 && \
+ ##   /usr/local/anaconda3/envs/tensorflow/bin/pip install --upgrade pip && \
+ ##   /usr/local/anaconda3/envs/tensorflow/bin/pip install git+git://github.com/Hvass-Labs/scikit-optimize.git@dd7433da068b5a2509ef4ea4e5195458393e6555 && \
     
     echo "Y" | /usr/local/anaconda3/envs/tensorflow/bin/conda install tensorflow && \
     echo "Y" | /usr/local/anaconda3/envs/tensorflow/bin/conda install pytorch
@@ -86,14 +86,14 @@ RUN /usr/bin/wget https://s3.amazonaws.com/yb-lab-cfg/admin/yb-admin.NIMBIX.x86_
 && sudo apt-get install -y awscli 
 
     
-RUN sudo apt-get install -y r-base \
-&& sudo apt-get install -y r-base-dev 
-RUN sudo apt-get install -y gdebi-core 
-RUN /usr/bin/wget https://download2.rstudio.org/rstudio-server-1.1.442-amd64.deb 
-RUN echo "y" |sudo gdebi rstudio-server-1.1.442-amd64.deb 
-RUN rm rstudio-server-1.1.442-amd64.deb 
+##RUN sudo apt-get install -y r-base \
+##&& sudo apt-get install -y r-base-dev 
+##RUN sudo apt-get install -y gdebi-core 
+##RUN /usr/bin/wget https://download2.rstudio.org/rstudio-server-1.1.442-amd64.deb 
+##RUN echo "y" |sudo gdebi rstudio-server-1.1.442-amd64.deb 
+##RUN rm rstudio-server-1.1.442-amd64.deb 
 
-RUN echo "auth-minimum-user-id=500" >> /etc/rstudio/rserver.conf
+##RUN echo "auth-minimum-user-id=500" >> /etc/rstudio/rserver.conf
     
 EXPOSE 8888
 EXPOSE 8787
