@@ -66,7 +66,7 @@ sudo /usr/local/anaconda3/envs/tensorflow/bin/pip install --upgrade gym
 
 
 
-exit 0
+##exit 0
 
 
 
