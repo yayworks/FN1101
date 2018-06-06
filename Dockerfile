@@ -57,19 +57,19 @@ RUN chmod +x /usr/local/config.sh && chown nimbix.nimbix /usr/local/config.sh &&
     chmod +x /usr/local/setup.x && chown nimbix.nimbix /usr/local/setup.x && \
     chmod +x /usr/local/jpy_lab_start.sh && \
     
-    wget -O- -q http://s3tools.org/repo/deb-all/stable/s3tools.key | sudo apt-key add - && \
-    sudo wget -O/etc/apt/sources.list.d/s3tools.list http://s3tools.org/repo/deb-all/stable/s3tools.list && \
-    sudo apt-get update && \
-    sudo apt-get install s3cmd && \
-    sudo apt-get install -y gfortran && \
-    sudo apt-get update && \
-    sudo apt-get install -y python-qt4 && \
+    ##wget -O- -q http://s3tools.org/repo/deb-all/stable/s3tools.key | sudo apt-key add - && \
+    ##sudo wget -O/etc/apt/sources.list.d/s3tools.list http://s3tools.org/repo/deb-all/stable/s3tools.list && \
+    ##sudo apt-get update && \
+    ##sudo apt-get install s3cmd && \
+    ##sudo apt-get install -y gfortran && \
+    ##sudo apt-get update && \
+    ##sudo apt-get install -y python-qt4 && \
     
  ##   /usr/local/anaconda3/envs/tensorflow/bin/pip install --upgrade pip && \
  ##   /usr/local/anaconda3/envs/tensorflow/bin/pip install git+git://github.com/Hvass-Labs/scikit-optimize.git@dd7433da068b5a2509ef4ea4e5195458393e6555 && \
     
-    echo "Y" | /usr/local/anaconda3/envs/tensorflow/bin/conda install tensorflow && \
-    echo "Y" | /usr/local/anaconda3/envs/tensorflow/bin/conda install pytorch
+    ##echo "Y" | /usr/local/anaconda3/envs/tensorflow/bin/conda install tensorflow && \
+    ##echo "Y" | /usr/local/anaconda3/envs/tensorflow/bin/conda install pytorch
  
 
 
