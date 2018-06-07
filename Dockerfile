@@ -97,12 +97,7 @@ RUN echo "auth-minimum-user-id=500" >> /etc/rstudio/rserver.conf && \
 
     echo "Y" | /usr/local/anaconda3/bin/conda install -c r r-irkernel
 
-RUN apt-add-repository ppa:octave/stable && \
-    apt-get update && \
-    apt-get install -y octave && \
-    apt-get build-dep -y octave && \
 
-    echo "Y" | /usr/local/anaconda3/bin/conda install -c conda-forge octave_kernel
 
 EXPOSE 8888
 EXPOSE 8787
