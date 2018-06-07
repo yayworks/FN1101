@@ -2,7 +2,9 @@
 FROM nimbix/base-ubuntu-nvidia:8.0-cudnn5-devel
 MAINTAINER Nimbix, Inc. <support@nimbix.net>
 
-RUN apt-get update && apt-get install -y \
+RUN apt-get update && \
+    apt-get -y install software-properties-common python-software-properties && \
+    apt-get install -y \
     build-essential \
     awscli \
     curl \
@@ -30,8 +32,8 @@ RUN apt-get update && apt-get install -y \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
     
-RUN apt-get -y install software-properties-common python-software-properties && \
-    wget -O- -q http://s3tools.org/repo/deb-all/stable/s3tools.key | apt-key add - && \
+
+RUN wget -O- -q http://s3tools.org/repo/deb-all/stable/s3tools.key | apt-key add - && \
     wget -O/etc/apt/sources.list.d/s3tools.list http://s3tools.org/repo/deb-all/stable/s3tools.list && \
     apt-get update && \
     apt-get -y install s3cmd 
