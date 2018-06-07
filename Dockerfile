@@ -80,6 +80,19 @@ RUN echo " " | sudo apt-add-repository ppa:octave/stable && \
     sudo apt-get install -y octave && \
     sudo apt-get build-dep -y octave && \
     echo "Y" | /usr/local/anaconda3/bin/conda install -c conda-forge octave_kernel
+    
+RUN sudo /usr/local/anaconda3/bin/pip install msgpack && \
+    sudo /usr/local/anaconda3/bin/pip install scilab_kernel
+    
+RUN sudo /usr/local/anaconda3/bin/pip install jupyter_c_kernel && \
+    sudo /usr/local/anaconda3/bin/install_c_kernel
+    
+RUN git clone https://github.com/sourceryinstitute/jupyter-CAF-kernel && \
+    cd jupyter-CAF-kernel && \
+    sudo /usr/local/anaconda3/bin/pip install -e prebuild/jupyter-caf-kernel && \
+    sudo /usr/local/anaconda3/bin/jupyter-kernelspec install prebuild/jupyter-caf-kernel/Coarray-Fortran/ && \
+    cd jupyter-CAF-kernel && \
+    sudo rm -rf jupyter-CAF-kernel
 
 RUN echo 'export PATH=/usr/local/cuda/bin:/usr/local/anaconda3/envs/tensorflow/bin:$PATH' >> /home/nimbix/.bashrc \
 &&  echo 'export PYTHONPATH=/usr/local/anaconda3/envs/tensorflow/lib/python3.6:/usr/local/anaconda3/envs/tensorflow/lib/python3.6/site-packages/:/usr/local/anaconda3/envs/tensorflow/lib/python3.6/site-packages/prettytensor-0.7.2-py3.6.egg:/usr/local/anaconda3/envs/tensorflow/lib/python3.6/site-packages/enum34-1.1.6-py3.6.egg:/usr/local/anaconda3/envs/tensorflow/lib/python3.6/site-packages/matplotlib:$PYTHONPATH' >> /home/nimbix/.bashrc \
