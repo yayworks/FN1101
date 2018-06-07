@@ -63,13 +63,13 @@ RUN chmod +x /usr/local/config.sh && chown nimbix.nimbix /usr/local/config.sh &&
     sudo apt-get install s3cmd && \
     sudo apt-get install -y gfortran && \
     sudo apt-get update && \
-    sudo apt-get install -y python-qt4 && \
+    sudo apt-get install -y python-qt4 
     
-    /usr/local/anaconda3/envs/tensorflow/bin/pip install --upgrade pip && \
-    /usr/local/anaconda3/envs/tensorflow/bin/pip install git+git://github.com/Hvass-Labs/scikit-optimize.git@dd7433da068b5a2509ef4ea4e5195458393e6555 && \
+##   /usr/local/anaconda3/envs/tensorflow/bin/pip install --upgrade pip && \
+##   /usr/local/anaconda3/envs/tensorflow/bin/pip install git+git://github.com/Hvass-Labs/scikit-optimize.git@dd7433da068b5a2509ef4ea4e5195458393e6555 && \
     
-    echo "Y" | /usr/local/anaconda3/envs/tensorflow/bin/conda install tensorflow && \
-    echo "Y" | /usr/local/anaconda3/envs/tensorflow/bin/conda install pytorch
+##   echo "Y" | /usr/local/anaconda3/envs/tensorflow/bin/conda install tensorflow && \
+##   echo "Y" | /usr/local/anaconda3/envs/tensorflow/bin/conda install pytorch
  
 
 
