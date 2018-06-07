@@ -20,7 +20,7 @@ RUN apt-get update && apt-get install -y \
     byacc \
     libibumad-dev \
     libibumad3 \
-    flex && \
+    flex \
     gfortran && \
     apt-get install -y python3.4 && \
     apt-get install -y python3-pip && \
