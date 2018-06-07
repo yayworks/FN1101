@@ -93,8 +93,10 @@ RUN /usr/bin/wget https://download2.rstudio.org/rstudio-server-1.1.442-amd64.deb
 RUN echo "y" |sudo gdebi rstudio-server-1.1.442-amd64.deb 
 RUN rm rstudio-server-1.1.442-amd64.deb 
 
-RUN echo "auth-minimum-user-id=500" >> /etc/rstudio/rserver.conf
-    
+RUN echo "auth-minimum-user-id=500" >> /etc/rstudio/rserver.conf && \
+
+echo "Y" | /usr/local/anaconda3/bin/conda install -c r r-irkernel
+
 EXPOSE 8888
 EXPOSE 8787
     
