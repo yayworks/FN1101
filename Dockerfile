@@ -81,7 +81,9 @@ RUN echo " " | sudo apt-add-repository ppa:octave/stable && \
     sudo apt-get build-dep -y octave && \
     echo "Y" | /usr/local/anaconda3/bin/conda install -c conda-forge octave_kernel
     
-RUN sudo /usr/local/anaconda3/bin/pip install msgpack && \
+RUN sudo apt-get update && \
+    sudo apt-get install -y scilab && \
+    sudo /usr/local/anaconda3/bin/pip install msgpack && \
     sudo /usr/local/anaconda3/bin/pip install scilab_kernel
     
 RUN sudo /usr/local/anaconda3/bin/pip install jupyter_c_kernel && \
