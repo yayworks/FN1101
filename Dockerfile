@@ -89,6 +89,12 @@ RUN sudo apt-get update && \
 RUN sudo /usr/local/anaconda3/bin/pip install jupyter_c_kernel && \
     sudo /usr/local/anaconda3/bin/install_c_kernel
     
+RUN echo "y"|sudo /usr/local/anaconda3/bin/conda update -n base conda && \
+    echo "y"|sudo /usr/local/anaconda3/bin/conda create -n fenicsproject -c conda-forge fenics && \
+    source activate fenicsproject
+    
+
+    
 ##RUN git clone https://github.com/sourceryinstitute/jupyter-CAF-kernel 
 ##RUN cd jupyter-CAF-kernel 
 ##RUN sudo /usr/local/anaconda3/bin/pip install -e prebuild/jupyter-caf-kernel  !this command gave an error during docker image build
@@ -97,7 +103,8 @@ RUN sudo /usr/local/anaconda3/bin/pip install jupyter_c_kernel && \
 ##RUN sudo rm -rf jupyter-CAF-kernel
 
 RUN echo 'export PATH=/usr/local/cuda/bin:/usr/local/anaconda3/envs/tensorflow/bin:$PATH' >> /home/nimbix/.bashrc \
-&&  echo 'export PYTHONPATH=/usr/local/anaconda3/envs/tensorflow/lib/python3.6:/usr/local/anaconda3/envs/tensorflow/lib/python3.6/site-packages/:/usr/local/anaconda3/envs/tensorflow/lib/python3.6/site-packages/prettytensor-0.7.2-py3.6.egg:/usr/local/anaconda3/envs/tensorflow/lib/python3.6/site-packages/enum34-1.1.6-py3.6.egg:/usr/local/anaconda3/envs/tensorflow/lib/python3.6/site-packages/matplotlib:$PYTHONPATH' >> /home/nimbix/.bashrc \
+&&  echo 'export PATH=/usr/local/anaconda3/bin:/usr/local/anaconda3/envs/fenicsproject/bin:$PATH' >> /home/nimbix/.bashrc \
+&&  echo 'export PYTHONPATH=/usr/local/anaconda3/envs/fenicsproject/lib/python3.6:usr/local/anaconda3/envs/tensorflow/lib/python3.6:/usr/local/anaconda3/envs/tensorflow/lib/python3.6/site-packages/:/usr/local/anaconda3/envs/tensorflow/lib/python3.6/site-packages/prettytensor-0.7.2-py3.6.egg:/usr/local/anaconda3/envs/tensorflow/lib/python3.6/site-packages/enum34-1.1.6-py3.6.egg:/usr/local/anaconda3/envs/tensorflow/lib/python3.6/site-packages/matplotlib:$PYTHONPATH' >> /home/nimbix/.bashrc \
 &&  echo 'export PATH=/usr/local/cuda/bin:/usr/local/anaconda3/envs/tensorflow/bin:$PATH' >> /etc/skel/.bashrc \
 &&  echo 'export PYTHONPATH=/usr/local/anaconda3/envs/tensorflow/lib/python3.6:/usr/local/anaconda3/envs/tensorflow/lib/python3.6/site-packages/:/usr/local/anaconda3/envs/tensorflow/lib/python3.6/site-packages/prettytensor-0.7.2-py3.6.egg:/usr/local/anaconda3/envs/tensorflow/lib/python3.6/site-packages/enum34-1.1.6-py3.6.egg:/usr/local/anaconda3/envs/tensorflow/lib/python3.6/site-packages/matplotlib:$PYTHONPATH' >> /etc/skel/.bashrc
    
