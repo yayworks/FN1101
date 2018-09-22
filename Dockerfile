@@ -2,6 +2,11 @@
 FROM nimbix/base-ubuntu-nvidia:8.0-cudnn5-devel
 MAINTAINER Nimbix, Inc. <support@nimbix.net>
 
+# Update SERIAL_NUMBER to force rebuild of all layers (don't use cached layers)
+ARG SERIAL_NUMBER
+ENV SERIAL_NUMBER ${SERIAL_NUMBER:-20180921.2222}
+
+
 RUN apt-get update && \
     apt-get -y install software-properties-common python-software-properties && \
     apt-get install -y \
