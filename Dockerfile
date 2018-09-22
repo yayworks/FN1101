@@ -4,7 +4,7 @@ MAINTAINER Nimbix, Inc. <support@nimbix.net>
 
 # Update SERIAL_NUMBER to force rebuild of all layers (don't use cached layers)
 ARG SERIAL_NUMBER
-ENV SERIAL_NUMBER ${SERIAL_NUMBER:-20180921.2222}
+ENV SERIAL_NUMBER ${SERIAL_NUMBER:-20180921.2303}
 
 
 RUN apt-get update && \
@@ -34,6 +34,7 @@ RUN apt-get update && \
     apt-get install -y python-qt4 && \ 
     apt-get install -y nodejs-legacy && \
     apt-get install -y npm && \
+    apt-get install apt-transport-https && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
     
