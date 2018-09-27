@@ -4,7 +4,7 @@ MAINTAINER Nimbix, Inc. <support@nimbix.net>
 
 # Update SERIAL_NUMBER to force rebuild of all layers (don't use cached layers)
 ARG SERIAL_NUMBER
-ENV SERIAL_NUMBER ${SERIAL_NUMBER:-20180926.2345}
+ENV SERIAL_NUMBER ${SERIAL_NUMBER:-20180927.1247}
 
 
 RUN apt-get update && \
@@ -96,7 +96,7 @@ RUN sudo /usr/local/anaconda3/bin/pip install jupyter_c_kernel
 ###    sudo /usr/local/anaconda3/bin/install_c_kernel
     
 RUN echo "Y" |sudo /usr/local/anaconda3/bin/conda update -n base conda && \
-    echo "Y" |sudo /usr/local/anaconda3/bin/conda create -n fenicsproject -c conda-forge fenics 
+    echo "Y" |sudo /usr/local/anaconda3/bin/conda create -n fenicsproject -c conda-forge fenics mshr 
 ##RUN source activate fenicsproject
     
 
