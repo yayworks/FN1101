@@ -33,18 +33,18 @@ EOF
 
 ###This finally did work
 
-sudo /usr/local/anaconda3/bin/conda create -n tensorflow python=3.6 <<EOF
+sudo /usr/local/anaconda3/bin/conda create -n fenicsproject python=3.6 <<EOF
 y
 EOF
 
-source /usr/local/anaconda3/bin/activate tensorflow
+source /usr/local/anaconda3/bin/activate fenicsproject
 
-sudo /usr/local/anaconda3/bin/conda install -c conda-forge tensorflow <<EOF
+sudo /usr/local/anaconda3/bin/conda install -c conda-forge fenics <<EOF
 y
 EOF
 
-sudo /usr/local/anaconda3/envs/tensorflow/bin/pip install --upgrade prettytensor
-sudo /usr/local/anaconda3/envs/tensorflow/bin/pip install --upgrade gym
+#sudo /usr/local/anaconda3/envs/tensorflow/bin/pip install --upgrade prettytensor
+#sudo /usr/local/anaconda3/envs/tensorflow/bin/pip install --upgrade gym
 
 ##cd /tmp
 ##wget https://s3.amazonaws.com/yb-lab-cfg/pnnl_tfg_v2.tar.gz
