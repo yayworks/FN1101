@@ -108,12 +108,8 @@ RUN echo "Y" |sudo /usr/local/anaconda3/bin/conda update -n base conda && \
 ##RUN cd jupyter-CAF-kernel 
 ##RUN sudo rm -rf jupyter-CAF-kernel
 
-RUN echo 'export PATH=/usr/local/cuda/bin:/usr/local/anaconda3/envs/tensorflow/bin:$PATH' >> /home/nimbix/.bashrc \
-&&  echo 'export PATH=/usr/local/anaconda3/bin:/usr/local/anaconda3/envs/fenicsproject/bin:$PATH' >> /home/nimbix/.bashrc \
-&&  echo 'export PYTHONPATH=/usr/local/anaconda3/envs/fenicsproject/lib/python3.6:usr/local/anaconda3/envs/tensorflow/lib/python3.6:/usr/local/anaconda3/envs/tensorflow/lib/python3.6/site-packages/:/usr/local/anaconda3/envs/tensorflow/lib/python3.6/site-packages/prettytensor-0.7.2-py3.6.egg:/usr/local/anaconda3/envs/tensorflow/lib/python3.6/site-packages/enum34-1.1.6-py3.6.egg:/usr/local/anaconda3/envs/tensorflow/lib/python3.6/site-packages/matplotlib:$PYTHONPATH' >> /home/nimbix/.bashrc \
-&&  echo 'export PATH=/usr/local/cuda/bin:/usr/local/anaconda3/envs/tensorflow/bin:$PATH' >> /etc/skel/.bashrc \
-&&  echo 'export PYTHONPATH=/usr/local/anaconda3/envs/tensorflow/lib/python3.6:/usr/local/anaconda3/envs/tensorflow/lib/python3.6/site-packages/:/usr/local/anaconda3/envs/tensorflow/lib/python3.6/site-packages/prettytensor-0.7.2-py3.6.egg:/usr/local/anaconda3/envs/tensorflow/lib/python3.6/site-packages/enum34-1.1.6-py3.6.egg:/usr/local/anaconda3/envs/tensorflow/lib/python3.6/site-packages/matplotlib:$PYTHONPATH' >> /etc/skel/.bashrc
-   
+RUN echo 'export PATH=/usr/local/cuda/bin:/usr/local/anaconda3/envs/fenicsproject/bin:$PATH' >> /etc/skel/.bashrc \
+&&  echo 'export PYTHONPATH=/usr/local/anaconda3/envs/fenicsproject/lib:/usr/local/anaconda3/envs/fenicsproject/lib/python3.6:/usr/local/anaconda3/envs/fenicsproject/lib/python3.6/site-packages/:/usr/local/anaconda3/envs/fenicsproject/lib/python3.6/site-packages/matplotlib:$PYTHONPATH' >> /etc/skel/.bashrc
 
 EXPOSE 8888
 EXPOSE 8787
