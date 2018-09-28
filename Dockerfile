@@ -4,7 +4,7 @@ MAINTAINER Nimbix, Inc. <support@nimbix.net>
 
 # Update SERIAL_NUMBER to force rebuild of all layers (don't use cached layers)
 ARG SERIAL_NUMBER
-ENV SERIAL_NUMBER ${SERIAL_NUMBER:-20180927.1522}
+ENV SERIAL_NUMBER ${SERIAL_NUMBER:-20180927.2100}
 
 
 RUN apt-get update && \
